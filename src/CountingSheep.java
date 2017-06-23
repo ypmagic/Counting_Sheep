@@ -27,7 +27,7 @@ public class CountingSheep {
     }
 
     private void checkCount() {
-        for (int p = 0; p < 30000; p++) {
+        for (int p = 0; p < 1000000; p++) {
             String temp = String.valueOf(this.n);
             for (int i = 0; i < temp.length(); i++) {
                 int digit = Integer.parseInt(temp.substring(i, i+1));
@@ -78,15 +78,15 @@ public class CountingSheep {
     }
 
     public static void main(String[] args) {
-        File input = new File("A-small-practice.in");
+        File input = new File("A-large-practice.in");
         try {
             Scanner sc = new Scanner(input);
-            PrintWriter pw = new PrintWriter("output.out");
+            PrintWriter pw = new PrintWriter("output-large.out");
             int testCases = sc.nextInt();
             for (int j = 0; j < testCases; j++) {
                 int n = sc.nextInt();
                 CountingSheep c = new CountingSheep(n);
-                pw.print("Case #" + (j+1) + ": " + c.returnResult());
+                pw.println("Case #" + (j+1) + ": " + c.returnResult());
             }
             pw.close();
         } catch (FileNotFoundException a) {
